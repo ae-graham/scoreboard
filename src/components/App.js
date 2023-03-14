@@ -46,19 +46,19 @@ const Counter = () => {
 const App = () => {
   const [players, setPlayers] = React.useState([
     {
-      name: "Guil",
+      name: "Sydney Roosters",
       id: 1
     },
     {
-      name: "Treasure",
+      name: "Brisbane Broncos",
       id: 2
     },
     {
-      name: "Ashley",
+      name: "Parramatta Eels",
       id: 3
     },
     {
-      name: "James",
+      name: "Melbourne Storm",
       id: 4
     }
   ]);
