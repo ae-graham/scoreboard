@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Team from "./Team";
+//import AddTeamForm from "./AddTeamForm";
 
 
 const App = () => {
@@ -53,7 +54,7 @@ const App = () => {
     <div className="scoreboard">
       <Header
         title="Scoreboard"
-        totalTeams={teams.length}
+        teams={teams}
       />
 
       {/* Players list */}
@@ -67,6 +68,8 @@ const App = () => {
           changeScore={handleChangeScore} /*This passes down data from App down to Counter were the function will be called through the onclick event */
         />
       )}
+
+      {/*<AddTeamForm />*/}
     </div>
   );
 
