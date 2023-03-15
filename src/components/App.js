@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Team from "./Team";
-//import AddTeamForm from "./AddTeamForm";
+import AddTeamForm from "./AddTeamForm";
 
 
 const App = () => {
@@ -28,6 +28,8 @@ const App = () => {
     }
   ]);
 
+  const [nextTeamId, setnextTeamId] = React.useState(5);
+
   const handleRemoveTeam = (id) => {
     setTeams(prevTeams => prevTeams.filter(element => element.id !== id));
     //we include the state variable through prevTeams, so that we can filter through each element of the array --> (object),
@@ -47,6 +49,17 @@ const App = () => {
         return element;                                     //then we just return the team object.
       }
     }));
+  }
+
+  const handleAddTeam = (name) => {                         //takes in the value submitted from the form as the 'name' parameter,
+    setTeams(prevTeams => [...prevTeams,                    //then we call setTeams which takes in the prevTeam and copies the entire state array into a new array we create.
+      {
+        name: name,                                         //we asign the name property the value from the parameter (the input value)
+        score: 0,
+        id: nextTeamId                                      //we must create a unique id for each team, so we asign the id with a new state id
+      } 
+    ]);
+    setnextTeamId(prevTeamId => prevTeamId + 1);
   }
   
 
@@ -69,7 +82,7 @@ const App = () => {
         />
       )}
 
-      {/*<AddTeamForm />*/}
+      <AddTeamForm addTeam={handleAddTeam}/>
     </div>
   );
 
