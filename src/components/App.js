@@ -4,7 +4,7 @@ import Team from "./Team";
 
 
 const App = () => {
-  const [players, setPlayers] = React.useState([
+  const [teams, setTeams] = React.useState([
     {
       name: "Sydney Roosters",
       score: 0,
@@ -27,23 +27,23 @@ const App = () => {
     }
   ]);
 
-  const handleRemovePlayer = (id) => {
-    setPlayers(prevPlayers => prevPlayers.filter(element => element.id !== id));
-    //we include the state variable through prevPlayer, so that we can filter through each element of the array --> (object),
+  const handleRemoveTeam = (id) => {
+    setTeams(prevTeams => prevTeams.filter(element => element.id !== id));
+    //we include the state variable through prevTeams, so that we can filter through each element of the array --> (object),
     //in the callback function of the filter method we pass the object/element through 'element' and target the 'id' property.
     //This is how we change the state, by creating a new array of elements.
   }
 
-  const handleChangeScore = (id, delta) => {                //takes in the id of the team and the delta the score should change by, then we call the SetPlayers function,
-    setPlayers(prevPlayer => prevPlayer.map(element => {    //which takes in the PrevPlayer and maps through the array. 
-      if(element.id === id) {                               //If the element(player) id matches the id in the parameter,
-        return {                                            //we'll return to map a new player object with:  
-          name: element.name,                               //the same player name
+  const handleChangeScore = (id, delta) => {                //takes in the id of the team and the delta the score should change by,
+    setTeams(prevTeam => prevTeam.map(element => {          //then we call the SetTeams function, which takes in the prevTeam and maps through the array. 
+      if(element.id === id) {                               //If the element(team) id matches the id in the parameter,
+        return {                                            //we'll return to map a new team object with:  
+          name: element.name,                               //the same team name
           score: element.score+delta,                       //the score changing by delta
-          id: id                                            //and with the same player id.
+          id: id                                            //and with the same team id.
         };
-      } else {                                              //If the player's id doesnt match the parameters id, 
-        return element;                                     //then we just return the player object.
+      } else {                                              //If the team's id doesnt match the parameters id, 
+        return element;                                     //then we just return the team object.
       }
     }));
   }
@@ -53,17 +53,17 @@ const App = () => {
     <div className="scoreboard">
       <Header
         title="Scoreboard"
-        totalPlayers={players.length}
+        totalTeams={teams.length}
       />
 
       {/* Players list */}
-      {players.map(element =>
+      {teams.map(element =>
         <Team
           name={element.name}
           score={element.score}
           id={element.id}
           key={element.id.toString()}
-          removePlayer={handleRemovePlayer} /*This is how we call handleRemovePlayer which changes the state*/
+          removeTeam={handleRemoveTeam} /*This is how we call handleRemoveTeam which changes the state*/
           changeScore={handleChangeScore} /*This passes down data from App down to Counter were the function will be called through the onclick event */
         />
       )}
