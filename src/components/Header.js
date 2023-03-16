@@ -4,8 +4,9 @@ import Stats from "./Stats";
 const Header = (props) => {
     return (
       <header>
-      <Stats teams={props.teams}/>
+        <Stats teams={props.teams}/>
         <h1>{props.title}</h1>
+        <img src="nrl.png" />
       </header>
     );
 }

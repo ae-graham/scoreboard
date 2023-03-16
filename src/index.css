@@ -95,6 +95,11 @@ svg {
   }
 }
 
+img {
+  width: 82px;
+  height: 104px;
+}
+
 /* COMPONENT STYLES -------------------- */
 .scoreboard {
   background: #fff;
@@ -105,33 +110,33 @@ svg {
   overflow: hidden;
 }
 
-.player {
+.team {
   display: flex;
   font-size: 1.2em;
   border-bottom: solid 2px #EEEEEE;
   letter-spacing: 2px;
 }
 
-.player:last-of-type {
+.team:last-of-type {
   border-bottom-color: #D4CAFF;
 }
 
-.player-name:hover .remove-player {
+.team-name:hover .remove-team {
   visibility: visible;
 }
 
-.player-name,
+.team-name,
 .counter-score {
   color: #2F2366;
 }
 
-.player-name {
+.team-name {
   flex-grow: 1;
   line-height: 3.5em;
   padding-left: 10px;
 }
 
-.remove-player {
+.remove-team {
   font-size: 1.15em;
   border: none;
   outline: none;
@@ -151,7 +156,7 @@ svg {
 .stats {
   display: flex;
   margin: 0 0 0 28px;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .stats td:first-child {
@@ -165,7 +170,7 @@ svg {
   text-align: left;
 }
 
-.stopwatch {
+/*.stopwatch {
   padding: 15px 10px 5px 10px;
   margin: -5px -10px -5px 10px;
   background: #5B45B9;
@@ -202,7 +207,7 @@ input[type=submit]:hover {
   margin: 0;
   font-weight: normal;
   letter-spacing: 2px;
-}
+}*/
 
 .counter {
   display: flex;

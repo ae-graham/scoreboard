@@ -6,9 +6,9 @@ const Team = (props) => {
   //to then pass the variable as a parameter in the onclick event.
   
   return (
-    <div className="player">
-      <span className="player-name">
-        <button className="remove-player" onClick={() => props.removeTeam(props.id)}>✖</button>
+    <div className="team">
+      <span className="team-name">
+        <button className="remove-team" onClick={() => props.removeTeam(props.id)}>✖</button>
         {props.name}
       </span>
 
