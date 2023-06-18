@@ -1,6 +1,6 @@
 {
   "name": "scoreboard",
-  "homepage": "https://ae-graham.github.io/scoreboard",
+  "homepage": "http://ae-graham.github.io/scoreboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
