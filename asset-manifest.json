@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/scoreboard/static/css/main.dc17efa7.css",
+    "main.js": "/scoreboard/static/js/main.4e64ff69.js",
+    "index.html": "/scoreboard/index.html",
+    "main.dc17efa7.css.map": "/scoreboard/static/css/main.dc17efa7.css.map",
+    "main.4e64ff69.js.map": "/scoreboard/static/js/main.4e64ff69.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc17efa7.css",
+    "static/js/main.4e64ff69.js"
+  ]
+}
